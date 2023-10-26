@@ -49,6 +49,7 @@ Para esto, realice lo siguiente:
 	```
 3. Compile y ejecute su aplicación. Abra la aplicación en varias pestañas diferentes (para evitar problemas con el caché del navegador, use el modo 'incógnito' en cada prueba).
 4. Ingrese los datos, ejecute la acción del botón, y verifique que en todas la pestañas se haya lanzado la alerta con los datos ingresados.
+![image](https://github.com/juliamejia/HTML5_JS_STOMP_WebSockets/assets/98657146/70010fb7-5216-4837-97db-b36370d9d5a3)  
 
 5. Haga commit de lo realizado, para demarcar el avance de la parte 2.
 
@@ -56,19 +57,25 @@ Para esto, realice lo siguiente:
 	git commit -m "PARTE 1".
 	```
 
+ 	<img width="865" alt="image" src="https://github.com/juliamejia/HTML5_JS_STOMP_WebSockets/assets/98657146/0e8a797d-21f8-440a-b359-1745a26164a1">  
+
+
 
 ## Parte II.
 
 Para hacer mas útil la aplicación, en lugar de capturar las coordenadas con campos de formulario, las va a capturar a través de eventos sobre un elemento de tipo \<canvas>. De la misma manera, en lugar de simplemente mostrar las coordenadas enviadas en los eventos a través de 'alertas', va a dibujar dichos puntos en el mismo canvas. Haga uso del mecanismo de captura de eventos de mouse/táctil usado en ejercicios anteriores con este fin.
 
 1. Haga que el 'callback' asociado al tópico /topic/newpoint en lugar de mostrar una alerta, dibuje un punto en el canvas en las coordenadas enviadas con los eventos recibidos. Para esto puede [dibujar un círculo de radio 1](http://www.w3schools.com/html/html5_canvas.asp).
-4. Ejecute su aplicación en varios navegadores (y si puede en varios computadores, accediendo a la aplicación mendiante la IP donde corre el servidor). Compruebe que a medida que se dibuja un punto, el mismo es replicado en todas las instancias abiertas de la aplicación.
+2. Ejecute su aplicación en varios navegadores (y si puede en varios computadores, accediendo a la aplicación mendiante la IP donde corre el servidor). Compruebe que a medida que se dibuja un punto, el mismo es replicado en todas las instancias abiertas de la aplicación.
+![image](https://github.com/juliamejia/HTML5_JS_STOMP_WebSockets/assets/98657146/5a21aafa-cb14-4785-9d87-30d4f178085b)  
 
-5. Haga commit de lo realizado, para marcar el avance de la parte 2.
+3. Haga commit de lo realizado, para marcar el avance de la parte 2.
 
 	```bash
 	git commit -m "PARTE 2".
 	```
+
+ 	<img width="856" alt="image" src="https://github.com/juliamejia/HTML5_JS_STOMP_WebSockets/assets/98657146/e7deef13-7bc4-4eb2-a7c3-307e0796e2c7">  
 
 ## Parte III.
 
@@ -76,14 +83,17 @@ Ajuste la aplicación anterior para que pueda manejar más de un dibujo a la vez
 
 1. Agregue un campo en la vista, en el cual el usuario pueda ingresar un número. El número corresponderá al identificador del dibujo que se creará.
 2. Modifique la aplicación para que, en lugar de conectarse y suscribirse automáticamente (en la función init()), lo haga a través de botón 'conectarse'. Éste, al oprimirse debe realizar la conexión y suscribir al cliente a un tópico que tenga un nombre dinámico, asociado el identificador ingresado, por ejemplo: /topic/newpoint.25, topic/newpoint.80, para los dibujos 25 y 80 respectivamente.
-3. De la misma manera, haga que las publicaciones se realicen al tópico asociado al identificador ingresado por el usuario.
+3. De la misma manera, haga que las publicaciones se realicen al tópico asociado al identificador ingresado por el usuario.  
+   <img width="903" alt="image" src="https://github.com/juliamejia/HTML5_JS_STOMP_WebSockets/assets/98657146/10325ab7-ebbd-4cb2-8cbd-08352abef988">  
+
 4. Rectifique que se puedan realizar dos dibujos de forma independiente, cada uno de éstos entre dos o más clientes.
 
 	```bash
 	git commit -m "PARTE 3".
 	```
+	<img width="853" alt="image" src="https://github.com/juliamejia/HTML5_JS_STOMP_WebSockets/assets/98657146/7c8c0ace-c34f-4187-a38a-634dac1cde4b">  
 
-
+ 
 ## Parte IV.
 
 Para la parte IV, usted va  a implementar una versión extendida del modelo de actividades y eventos anterior, en la que el servidor (que hasta ahora sólo fungía como Broker o MOM -Message Oriented Middleware-) se volverá también suscriptor de ciertos eventos, para a partir de los mismos agregar la funcionalidad de 'dibujo colaborativo de polígonos':
@@ -123,16 +133,17 @@ Para ver cómo manejar esto desde el manejador de eventos STOMP del servidor, re
 
 	3. El cliente, ahora también se suscribirá al tópico '/topic/newpolygon'. El 'callback' asociado a la recepción de eventos en el mismo debe, con los datos recibidos, dibujar un polígono, [tal como se muestran en ese ejemplo](http://www.arungudelli.com/html5/html5-canvas-polygon/).
 	4. Verifique la funcionalidad: igual a la anterior, pero ahora dibujando polígonos cada vez que se agreguen cuatro puntos.
-	
-	
-5. A partir de los diagramas dados en el archivo ASTAH incluido, haga un nuevo diagrama de actividades correspondiente a lo realizado hasta este punto, teniendo en cuenta el detalle de que ahora se tendrán tópicos dinámicos para manejar diferentes dibujos simultáneamente.
+    	![image](https://github.com/juliamejia/HTML5_JS_STOMP_WebSockets/assets/98657146/77e40d40-6e41-4c8c-94d2-76d158e90ddc)  
+
+4. A partir de los diagramas dados en el archivo ASTAH incluido, haga un nuevo diagrama de actividades correspondiente a lo realizado hasta este punto, teniendo en cuenta el detalle de que ahora se tendrán tópicos dinámicos para manejar diferentes dibujos simultáneamente.
 
 5. Haga commit de lo realizado.
 
 	```bash
 	git commit -m "PARTE FINAL".
-	```	
+	```
 
+ 	<img width="847" alt="image" src="https://github.com/juliamejia/HTML5_JS_STOMP_WebSockets/assets/98657146/d1fca4bb-d41e-46bc-afab-3e7386127457">
 
 
 ### Criterios de evaluación
